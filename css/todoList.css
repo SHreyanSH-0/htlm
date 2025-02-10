@@ -1,0 +1,26 @@
+.todoInput{
+    padding: 10px;
+}
+.todoInputDueDate{
+    padding: 10px;
+}
+.addButton{
+    padding: 10px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    color: white;
+
+}
+.deleteButton{
+    padding: 10px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    color: white;
+
+}

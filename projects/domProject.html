@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>DOM</title>
+</head>
+
+<style>
+    
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subscribeButton{
+        border: none;
+        color: white;
+        background-color: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px ;
+    }
+
+    .is-subed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+    }
+
+    .input{
+        font-size: 15px;
+        /* padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 10px; */
+        padding: 10px;
+    }
+
+    .calculate{
+        background-color: green; 
+        font-size: 15px;
+        color: white;
+        padding: 10px 15px; /* top-bottom left-right*/
+        cursor: pointer;
+    }
+
+</style>
+
+
+<body>    
+    <p>YouTube Subscribe Button </p>
+
+    <button class="js-subscribe subscribeButton" 
+    
+    onclick ="
+        subscribe();
+    
+    ">Subscribe</button>
+
+    <p>Rock Paper Scissors Game</p>
+    <a href="../rockPaperScissors.html" target="_blank"> Click here </a>
+
+    <p>Amazon Shipping Calculator<br><br>
+
+        Orders under $40 = +$10 shipping.<br><br>
+        
+        Orders over $40 = FREE shipping.
+    </p>
+
+    <input  class="js-input input"  placeholder="Cost of product" onkeydown="enter(event.key); console.log(event.key)">
+    <button class="js-calculate calculate" onclick="calculate()">Calculate</button>
+
+    <p class="js-result">$</p>
+
+</body>
+
+<script>
+    // window.document // -> AUTOMATICALLY ADDS WINDOW
+    // window.console.log('Window'); // -> REPRESENT BROWSER
+
+    function enter(h){
+        if(h ==='Enter')
+            calculate();
+    }
+
+    function calculate(){
+        const inputElement = document.querySelector('.js-input');
+        let cost = Number(inputElement.value);
+
+        if(cost === NaN)
+        document.querySelector('.js-result').innerHTML = `INVALID INPUT`;
+
+
+        if(cost<40)
+            cost = cost + 10;
+        document.querySelector('.js-result').innerHTML = `$${cost}`;
+    }
+
+
+    function subscribe(){
+        if(document.querySelector('.js-subscribe').innerText === 'Subscribe'){
+            document.querySelector('.js-subscribe').innerHTML = 'Subscribed';
+            document.querySelector('.js-subscribe').classList.add('is-subed');
+        }
+        else{
+            document.querySelector('.js-subscribe').innerHTML = 'Subscribe';
+            document.querySelector('.js-subscribe').classList.remove('is-subed');
+        }
+}
+    
+</script>
+
+</html>

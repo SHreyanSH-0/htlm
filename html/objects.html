@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Object</title>
+</head>
+<body>    
+
+    <button onclick="
+
+            
+        save();
+        
+        ">COUNT</button>
+    <button onclick="
+
+            
+        reset();
+        
+        ">RESET</button>
+      
+
+</body>
+
+<script>
+    let prod = JSON.parse(localStorage.getItem('obj1')) //if there is nothing in local storage the it will return null
+    // if(prod==null){
+    //     prod = {
+    //         name: 'Socks',
+    //         price: 199,
+    //         ['delivery-time']: '1 day',
+
+    //         // NESTED OBJECT
+
+    //         rating: { 
+    //             stars: 4.5, 
+    //             count: 90
+    //         }
+    //     };
+    // }
+    ||{
+        name: 'Socks',
+        price: 199,
+        ['delivery-time']: '1 day',
+
+        // NESTED OBJECT
+
+        rating: { 
+            stars: 4.5, 
+            count: 90
+        }
+    };
+
+    function save(){
+        prod.rating.count++;
+        console.log(prod.rating.count);
+        localStorage.setItem('obj1',JSON.stringify(prod));
+    }
+    function reset(){
+        prod.rating.count = 0;
+        console.log(prod.rating.count);
+        localStorage.setItem('obj1',JSON.stringify(prod));
+    }
+
+    console.log('Helllo'.length);
+    console.log('Helllo'.toUpperCase());
+
+    // OBJECTS ARE REFRENSES
+
+    const obj2 = prod;
+    const obj3 = {
+        name: 'Socks',
+        price: 199,
+        ['delivery-time']: '1 day',
+
+        // NESTED OBJECT
+
+        rating: { 
+            stars: 4.5, 
+            count: 90
+        }
+    };
+    console.log(prod==obj2); // TRUE
+    console.log(prod==obj3); // FALSE
+
+
+    console.log(JSON.parse(localStorage.getItem('obj1')));
+    console.log(localStorage.getItem('obj1'));
+
+    console.log(localStorage.getItem('message')); //-> ONLY SUPPORTS STRING
+    localStorage.setItem('message','Hello');
+
+
+    console.log(prod);
+    prod.price = 200;
+    console.log(prod.price);
+    console.log(prod['price']);
+    console.log(prod['delivery-time']);
+    
+    prod.size = 8;
+    console.log(prod);
+    
+    delete prod.size;
+    console.log(prod);
+
+    console.log(JSON.stringify(prod));
+
+    
+</script>
+
+</html>

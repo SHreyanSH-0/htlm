@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>DOM</title>
+    <link rel="stylesheet" href="/css/todoList.css">
+</head>
+<body>    
+    <p>Todo List</p>
+    <input placeholder="Todo name" class="js-todoInput todoInput" onkeydown="if(event.key==='Enter') addTodo()">
+    <input type="date" class="js-todoInputDueDate todoInputDueDate" >
+    <button class="addButton" onclick="addTodo()">Add</button>
+
+    <div class="js-todoList">
+    </div>
+</body>
+
+<script src="/js/toDolist.js"></script>
+
+</html>
