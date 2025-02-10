@@ -21,11 +21,21 @@ function renderTodoList(){
         // const dueDate = value.dueDate;
 
         const {name,dueDate} = value;
-        const hold = `<p>${name} ${dueDate}<button  class = "deleteButton" onclick = "
+        const hold = /*`<p>${name} ${dueDate}
+        <button  class = "deleteButton" onclick = "
 
         remove(${i});
         
-        ">Delete</button></p>`;
+        ">Delete</button></p>`;*/
+        `<div> ${name} </div>
+        <div> ${dueDate} </div>
+        
+        <button  class = "deleteButton" onclick = "
+
+        remove(${i});
+        
+        ">Delete</button>
+        `
         htmlCode += hold;
     }
     divElement.innerHTML = htmlCode;

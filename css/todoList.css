@@ -1,8 +1,14 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .todoInput{
     padding: 10px;
+    margin-bottom: 10px;
 }
 .todoInputDueDate{
     padding: 10px;
+    margin-bottom: 10px;
 }
 .addButton{
     padding: 10px 35px;
@@ -12,7 +18,8 @@
     border: none;
     cursor: pointer;
     color: white;
-
+    margin-bottom: 10px;
+    
 }
 .deleteButton{
     padding: 10px 35px;
@@ -22,5 +29,12 @@
     border: none;
     cursor: pointer;
     color: white;
+ }
 
+.todoGrid{
+    display: grid;
+    grid-template-columns: 200px 128px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
 }

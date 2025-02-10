@@ -5,11 +5,13 @@
 </head>
 <body>    
     <p>Todo List</p>
-    <input placeholder="Todo name" class="js-todoInput todoInput" onkeydown="if(event.key==='Enter') addTodo()">
-    <input type="date" class="js-todoInputDueDate todoInputDueDate" >
-    <button class="addButton" onclick="addTodo()">Add</button>
+    <div class="todoGrid">
+        <input placeholder="Todo name" class="js-todoInput todoInput" onkeydown="if(event.key==='Enter') addTodo()">
+        <input type="date" class="js-todoInputDueDate todoInputDueDate" >
+        <button class="addButton" onclick="addTodo()">Add</button>
+    </div>
 
-    <div class="js-todoList">
+    <div class="js-todoList todoGrid">
     </div>
 </body>
 
